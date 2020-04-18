@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>STUDENTS DETAILS FORM</h1>
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Rollno</th>
+    <th>College</th>
+</tr>
+   {% for stu in student %}
+<tr>
+ <td>{{ stu.id }}</td>
+    <td>{{ stu.name }}</td>
+    <td>{{ stu.rollno }}</td>
+    <td>{{ stu.college }}</td>
+ <td><a href="/update/{{ stu.id }}" class="btn btn-warning">Update</a>&nbsp&nbsp<a href="/delete/{{ stu.id }}" class="btn btn-danger">Delete</a> </td>
+</tr>
+{% endfor %}
+</table>
+     <a   href="/insert" class="btn btn-primary">Add Student</a><br><br>
+
+{% endblock %}
